@@ -1,5 +1,4 @@
 import WorkoutCard from "@/components/WorkoutCard";
-import ExerciseCard from "@/components/WorkoutCard";
 import type { Iworkout } from "@/types/index";
 
 const getWorkouts = async (): Promise<Iworkout[]> => {

@@ -61,7 +61,7 @@ export default function WorkoutDetails({ params }: PageProps) {
   return (
     <main className=" container mx-auto min-h-screen bg-[#0e0f12] text-white py-10 px-4 md:px-8 flex items-center justify-center">
       <div className="max-w-6xl w-full mx-auto">
-        {/* Back Button */}
+        {/* back btn */}
         <Link
           href="/"
           className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-[#a3e635] transition-colors duration-200 mb-6"
@@ -72,11 +72,11 @@ export default function WorkoutDetails({ params }: PageProps) {
           <span>Back to Library</span>
         </Link>
 
-        {/* Main Content Layout */}
+       
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
-          {/* Left Column: Image */}
-          <div className="lg:col-span-5 relative w-full h-[450px] sm:h-[520px] rounded-2xl overflow-hidden bg-gray-900 border border-gray-800">
+          
+          <div className="lg:col-span-5 relative w-full h-112.5 sm:h-130 rounded-2xl overflow-hidden bg-gray-900 border border-gray-800">
             <Image
               src={workout.image}
               alt={workout.name}
@@ -88,21 +88,21 @@ export default function WorkoutDetails({ params }: PageProps) {
             />
           </div>
 
-          {/* Right Column: Exercise Details */}
+          
           <div className="lg:col-span-7 flex flex-col justify-between">
             <div>
-              {/* Header Title */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-[family-name:var(--font-bebas)] tracking-wider uppercase text-white mb-2">
+             
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-(family-name:--font-bebas) tracking-wider uppercase text-white mb-2">
                 {workout.name}
               </h1>
 
-              {/* Subtitle / Description */}
+             
               <p className="text-gray-400 text-sm mb-4 leading-relaxed">
                 {workout.description ||
                   "A compound press that builds chest thickness, triceps, and pressing power from a stable bench."}
               </p>
 
-              {/* Muscle Groups Badges */}
+             
               <div className="flex flex-wrap gap-2 mb-6">
                 {workout.muscleGroups?.map((muscle, idx) => (
                   <span
@@ -114,7 +114,7 @@ export default function WorkoutDetails({ params }: PageProps) {
                 ))}
               </div>
 
-              {/* Information Table / Specifications */}
+              
               <div className="bg-[#13151b]/80 border border-gray-800/80 rounded-xl divide-y divide-gray-800/60 mb-8 text-xs sm:text-sm">
                 <div className="flex justify-between items-center px-4 py-3">
                   <span className="text-gray-400 uppercase tracking-wider text-[11px] font-medium">Equipment</span>
@@ -152,7 +152,7 @@ export default function WorkoutDetails({ params }: PageProps) {
                 </div>
               </div>
 
-              {/* Instructions Section */}
+             
               <div className="mb-8">
                 <h3 className="text-sm font-bold uppercase tracking-wider text-white mb-3">
                   Instructions
@@ -171,7 +171,7 @@ export default function WorkoutDetails({ params }: PageProps) {
                 </ol>
               </div>
 
-              {/* Action Buttons connected to your state/context */}
+              
               <div className="flex flex-wrap gap-4">
                 <button
                   onClick={() => addToPlan(workout)}
