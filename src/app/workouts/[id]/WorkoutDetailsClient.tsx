@@ -7,8 +7,6 @@ import type { Iworkout } from "@/types/index";
 
 export default function WorkoutDetailsClient({ workout }: { workout: Iworkout }) {
   const { plan, addToPlan, addToSaved } = usePlan();
-  const isPlanFull = plan.length >= 5;
-  const isAlreadyInPlan = plan.some((item) => item.id === workout.id);
 
   return (
     <main className="container mx-auto min-h-screen bg-[#0e0f12] text-white py-10 px-4 md:px-8 flex items-center justify-center">
@@ -98,8 +96,7 @@ export default function WorkoutDetailsClient({ workout }: { workout: Iworkout })
               <div className="flex flex-wrap gap-4">
                 <button
                   onClick={() => addToPlan(workout)}
-                  disabled={isPlanFull || isAlreadyInPlan}
-                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-[#a3e635] text-black font-bold text-xs sm:text-sm uppercase py-3 px-6 rounded-xl hover:bg-[#8ece28] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed transition-all cursor-pointer"
+                  className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 bg-[#a3e635] text-black font-bold text-xs sm:text-sm uppercase py-3 px-6 rounded-xl hover:bg-[#8ece28] active:scale-[0.98] transition-all cursor-pointer"
                 >
                   Add to today&apos;s plan
                 </button>

@@ -59,18 +59,18 @@ export function PlanProvider({ children }: { children: ReactNode }) {
   }, [completedIds]);
 
   const addToPlan = (workout: Iworkout) => {
-    if (plan.some((item) => item.id === workout.id)) {
-      toast.error("This workout is already in your plan.");
-      return;
-    }
-
     if (plan.length >= 5) {
       toast.error("Plan is full! Max 5 workouts.");
       return;
     }
 
-    setPlan((currentPlan) => [...currentPlan, workout]);
-    toast.success("Added to today's plan! 💪");
+    if (plan.some((item) => item.id === workout.id)) {
+      toast.error("This workout is already in today's plan.");
+      return;
+    }
+
+    setPlan([...plan, workout]);
+    toast.success("Added to today's plan!");
   };
 
   const addToSaved = (workout: Iworkout) => {
@@ -79,7 +79,7 @@ export function PlanProvider({ children }: { children: ReactNode }) {
       return;
     }
 
-    setSaved((currentSaved) => [...currentSaved, workout]);
+    setSaved([...saved, workout]);
     toast.success("Workout saved for later!");
   };
 
@@ -87,21 +87,22 @@ export function PlanProvider({ children }: { children: ReactNode }) {
     setPlan((prev) => prev.filter((item) => item.id !== id));
 
     setCompletedIds((prev) => prev.filter((completedId) => completedId !== id));
-    toast.success("Workout removed from your plan.");
+    toast.success("Removed from today's plan.");
   };
 
   const removeFromSaved = (id: number) => {
     setSaved((prev) => prev.filter((item) => item.id !== id));
-    toast.success("Workout removed from saved.");
+    toast.success("Removed from saved workouts.");
   };
 
   const toggleComplete = (id: number) => {
     const isCompleted = completedIds.includes(id);
-
-    setCompletedIds((prev) =>
-      isCompleted ? prev.filter((item) => item !== id) : [...prev, id],
+    setCompletedIds(
+      isCompleted
+        ? completedIds.filter((item) => item !== id)
+        : [...completedIds, id],
     );
-    toast.success(isCompleted ? "Workout marked as active." : "Workout completed! ✅");
+    toast.success(isCompleted ? "Workout marked as active." : "Workout completed!");
   };
 
   return (
