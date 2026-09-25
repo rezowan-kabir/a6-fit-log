@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FitLog — Workout Library & Tracker
 
-## Getting Started
+A modern, fast, and feature-packed workout library application designed for fitness enthusiasts to browse, organize, and track their daily workout routines with high performance and zero clutter.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+##  Technologies Used
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+* **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
+* **Language:** [TypeScript](https://www.typescriptlang.org/)
+* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+* **State Management:** React Context API (`PlanContext`) with `localStorage` persistence
+* **Notifications:** [react-hot-toast](https://react-hot-toast.com/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+##  Key Features
 
-## Learn More
+1. **Interactive Workout Library & Filtering:** Browse exercises with live sorting by duration, calories burned, or rating, alongside instant detail views (`/exercises/[id]`).
+2. **Dynamic Dual-Tab Management:** Switch seamlessly between **Today's Plan** and **Saved Workouts**, with live stats dynamically calculating total exercises, time, and calories for each tab.
+3. **Smart Daily Limit Guard:** Enforces a strict cap of maximum 5 workouts in "Today's Plan" to keep daily fitness goals realistic and focused.
+4. **Interactive Completion Tracking:** Mark exercises as completed in real time with persistence, keeping track of done workouts even after refreshing the page.
+5. **Full Local Storage Syncing:** State-driven persistence powered by Context API ensures your active plan, saved items, and completed status stay updated across sessions.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+##  Live Demo
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ **Live Link:** [https://fit-log-rk.vercel.app]
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
