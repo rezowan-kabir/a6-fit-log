@@ -1,12 +1,12 @@
-import React from 'react';
-import Banner from './components/homepage/Banner';
+import Hero from "@/components/Hero";
+import Workouts from "./workouts/page";
 
-const page = () => {
+
+export default function Page() {
   return (
     <div>
-      <Banner/>
+      <Hero />
+      <Workouts />
     </div>
   );
-};
-
-export default page;
+}

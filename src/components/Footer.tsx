@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <Link
           href="/"
-          className="flex items-center gap-2 text-2xl font-[family-name:var(--font-bebas)] tracking-wider text-white"
+          className="flex items-center gap-2 text-2xl font-(family-name:--font-bebas) tracking-wider text-white"
         >
           <svg
             className="w-6 h-6 text-[#a3e635] fill-current"
