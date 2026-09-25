@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-
+import flogo from "@/assets/logo.png"
 const Footer = () => {
   return (
     <footer className="container mx-auto bg-[#0e0f12] text-gray-400 py-6 px-4 md:px-8 border-t border-gray-900 mt-auto">
@@ -8,7 +8,7 @@ const Footer = () => {
         <Link
           href="/"
           className="flex items-center gap-2 text-2xl font-(family-name:--font-bebas) tracking-wider text-white"
-        >
+        > 
           <svg
             className="w-6 h-6 text-[#a3e635] fill-current"
             viewBox="0 0 24 24"

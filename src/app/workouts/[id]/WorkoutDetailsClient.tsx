@@ -6,7 +6,7 @@ import { usePlan } from "@/context/PlanContext";
 import type { Iworkout } from "@/types/index";
 
 export default function WorkoutDetailsClient({ workout }: { workout: Iworkout }) {
-  const { plan, addToPlan, addToSaved } = usePlan();
+  const { addToPlan, addToSaved } = usePlan();
 
   return (
     <main className="container mx-auto min-h-screen bg-[#0e0f12] text-white py-10 px-4 md:px-8 flex items-center justify-center">
