@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { usePlan } from "@/context/PlanContext";
@@ -15,7 +14,7 @@ const Navbar = () => {
         <Link
           href="/"
           className={`px-5 py-2 rounded-full font-medium transition-colors ${
-            pathname === "/"
+            pathname === "/" || pathname.startsWith("/workouts")
               ? "bg-[#1f2b10] text-[#a3e635]"
               : "text-gray-400 hover:text-white"
           }`}

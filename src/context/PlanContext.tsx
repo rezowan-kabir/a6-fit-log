@@ -24,21 +24,29 @@ export interface PlanContextType {
 
 const PlanContext = createContext<PlanContextType | undefined>(undefined);
 
+function readStoredValue<T>(key: string, fallback: T): T {
+  try {
+    const value = window.localStorage.getItem(key);
+    return value ? (JSON.parse(value) as T) : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
 export function PlanProvider({ children }: { children: ReactNode }) {
   const [plan, setPlan] = useState<Iworkout[]>([]);
   const [saved, setSaved] = useState<Iworkout[]>([]);
   const [completedIds, setCompletedIds] = useState<number[]>([]);
 
   useEffect(() => {
-    const storedPlan = window.localStorage.getItem("fitlog-plan");
-    const storedSaved = window.localStorage.getItem("fitlog-saved");
-    const storedCompleted = window.localStorage.getItem("fitlog-completed");
+    const storedPlan = readStoredValue<Iworkout[]>("fitlog-plan", []);
+    const storedSaved = readStoredValue<Iworkout[]>("fitlog-saved", []);
+    const storedCompleted = readStoredValue<number[]>("fitlog-completed", []);
 
     startTransition(() => {
-      if (storedPlan) setPlan(JSON.parse(storedPlan) as Iworkout[]);
-      if (storedSaved) setSaved(JSON.parse(storedSaved) as Iworkout[]);
-      if (storedCompleted)
-        setCompletedIds(JSON.parse(storedCompleted) as number[]);
+      setPlan(storedPlan);
+      setSaved(storedSaved);
+      setCompletedIds(storedCompleted);
     });
   }, []);
 

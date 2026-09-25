@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import bannerImg from "@/assets/banner.png";
 import Link from "next/link";
@@ -21,11 +20,13 @@ const Banner = () => {
             into today&apos;s plan, and watch the week&apos;s work add up.
           </p>
 
-          
           <Link
-            href="/"
-            className="pt-4 bg-[#a3e635] hover:bg-[#8ece26] text-black font-extrabold text-xs md:text-sm  px-6 py-3.5 rounded-lg    active:scale-95 "
+            href="#library"
+            className="inline-flex items-center gap-2 bg-[#a3e635] hover:bg-[#8ece26] text-black font-extrabold text-xs md:text-sm px-6 py-3.5 rounded-lg active:scale-95"
           >
+            <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 13l-7 7-7-7m7 7V4" />
+            </svg>
             BROWSE WORKOUTS
           </Link>
         </div>

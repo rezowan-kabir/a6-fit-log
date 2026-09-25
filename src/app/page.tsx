@@ -1,12 +1,14 @@
 import Hero from "@/components/Hero";
-import Workouts from "./workouts/page";
+import LibrarySection from "@/components/LibrarySection";
+
+export const dynamic = "force-dynamic";
 
 
 export default function Page() {
   return (
     <div>
       <Hero />
-      <Workouts />
+      <LibrarySection />
     </div>
   );
 }

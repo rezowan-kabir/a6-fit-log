@@ -1,32 +1,51 @@
-# FitLog — Workout Library & Tracker
+# FitLog
 
-A modern, fast, and feature-packed workout library application designed for fitness enthusiasts to browse, organize, and track their daily workout routines with high performance and zero clutter.
+FitLog is a responsive workout library and daily planning app. Browse exercises, inspect their details, save favorites, and build a focused plan of up to five workouts.
 
----
+## Technologies
 
-##  Technologies Used
+- Next.js 16 App Router
+- React 19 and TypeScript
+- Tailwind CSS 4 and DaisyUI
+- React Context API with `localStorage` persistence
+- `react-hot-toast` notifications
 
-* **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
-* **Language:** [TypeScript](https://www.typescriptlang.org/)
-* **Styling:** [Tailwind CSS](https://tailwindcss.com/)
-* **State Management:** React Context API (`PlanContext`) with `localStorage` persistence
-* **Notifications:** [react-hot-toast](https://react-hot-toast.com/)
+## Features
 
----
+- Responsive workout library with API-backed exercise cards
+- Workout detail pages with equipment, difficulty, stats, and instructions
+- Today's Plan and Saved tabs with live exercise, time, and calorie totals
+- Five-workout daily plan limit with duplicate and limit notifications
+- Mark workouts complete, remove items, and persist state across reloads
+- Loading states, custom 404 page, responsive navigation, and toast feedback
 
-##  Key Features
+## Getting Started
 
-1. **Interactive Workout Library & Filtering:** Browse exercises with live sorting by duration, calories burned, or rating, alongside instant detail views (`/exercises/[id]`).
-2. **Dynamic Dual-Tab Management:** Switch seamlessly between **Today's Plan** and **Saved Workouts**, with live stats dynamically calculating total exercises, time, and calories for each tab.
-3. **Smart Daily Limit Guard:** Enforces a strict cap of maximum 5 workouts in "Today's Plan" to keep daily fitness goals realistic and focused.
-4. **Interactive Completion Tracking:** Mark exercises as completed in real time with persistence, keeping track of done workouts even after refreshing the page.
-5. **Full Local Storage Syncing:** State-driven persistence powered by Context API ensures your active plan, saved items, and completed status stay updated across sessions.
+Install dependencies and start the development server:
 
----
+```bash
+npm install
+npm run dev
+```
 
-##  Live Demo
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
- **Live Link:** [https://fit-log-rk.vercel.app]
+Run the checks used before deployment:
+
+```bash
+npm run lint
+npm run build
+```
+
+## Routes
+
+- `/` - Hero and workout library
+- `/workouts/[id]` - Workout details
+- `/my-plan` - Today's Plan and Saved workouts
+
+## Live Demo
+
+[Open the live FitLog app](https://fit-log-rk.vercel.app)
 
 
 

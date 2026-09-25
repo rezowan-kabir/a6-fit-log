@@ -6,9 +6,8 @@ const WorkoutCard = ({ item }: { item: Iworkout }) => {
   return (
     <Link
       href={`/workouts/${item.id}`}
-      className="group bg-[#13151b] border border-gray-800/80 rounded-2xl overflow-hidden hover:border-[#a3e635]/50 hover:shadow-lg hover:shadow-[#a3e635]/10 hover:-translate-y-1 active:scale-[0.98] transition-all duration-300 flex flex-col justify-between cursor-pointer"
+      className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-gray-800/80 bg-[#13151b] transition-all duration-300  hover:border-[#a3e635]/50 "
     >
-      {/* Card Top: Image Component */}
       <div className="relative w-full h-52 bg-gray-900">
         <Image
           src={item.image}
@@ -20,14 +19,12 @@ const WorkoutCard = ({ item }: { item: Iworkout }) => {
         />
       </div>
 
-      {/* Card Body */}
       <div className="p-5 flex-1 flex flex-col justify-between">
         <div>
-          {/* Muscle Group Badges */}
           <div className="flex flex-wrap gap-2 mb-3">
             {item.muscleGroups?.map((muscle: string, idx: number) => (
               <span
-                key={idx}
+                key={`${muscle}-${idx}`}
                 className="bg-[#a3e635] text-black text-[10px] font-bold uppercase px-2.5 py-1 rounded-full tracking-wide"
               >
                 {muscle}
@@ -35,15 +32,13 @@ const WorkoutCard = ({ item }: { item: Iworkout }) => {
             ))}
           </div>
 
-          <h3 className="text-xl font-(family-name:--font-bebas) tracking-wide uppercase text-white group-hover:text-[#a3e635] transition-colors duration-300 mb-1">
+          <h3 className="text-xl font-(family-name:--font-bebas) tracking-wide uppercase text-white group-hover:text-[#a3e635] mb-1">
             {item.name}
           </h3>
 
-          {/* Equipment */}
           <p className="text-xs text-gray-400 mb-6">{item.equipment}</p>
         </div>
 
-        {/* Card Bottom Info */}
         <div className="pt-4 border-t border-gray-800/60 flex items-center justify-between text-xs text-gray-400">
           <div className="flex items-center gap-1.5">
             <svg

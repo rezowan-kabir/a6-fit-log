@@ -17,10 +17,9 @@ export default function MyPlanPage() {
     toggleComplete,
   } = usePlan();
 
-  // Tab State 
+  
   const [activeTab, setActiveTab] = useState<"plan" | "saved">("plan");
 
-  // Sort State
   const [sortBy, setSortBy] = useState<SortBy>("duration");
 
   
@@ -59,7 +58,7 @@ export default function MyPlanPage() {
           </p>
         </div>
 
-        {/* Dynamic Top Stats Bar */}
+        
         <div className="bg-[#13151b] border border-gray-800/80 rounded-2xl p-6 grid grid-cols-3 gap-4 mb-8">
           <div className="flex flex-col">
             <span className="text-xs text-gray-400 font-medium mb-1">
@@ -113,7 +112,7 @@ export default function MyPlanPage() {
             </button>
           </div>
 
-          {/* Sort Dropdown */}
+          
           <div className="flex items-center gap-2">
             <span className="text-xs text-gray-400">Sort By</span>
             <select
